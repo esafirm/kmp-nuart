@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="public-desktop">
+    <output-path>$PROJECT_DIR$/templates/public/build/libs</output-path>
+    <root id="archive" name="public-desktop.jar">
+      <element id="module-output" name="nuart.templates.public.desktopMain" />
+    </root>
+  </artifact>
+</component>

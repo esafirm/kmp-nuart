@@ -23,6 +23,12 @@ kotlin {
 
 gradlePlugin {
     plugins {
+        appPlugin {
+            id = "nolambda.stream.nuart.app"
+            displayName = "App Platform Gradle Plugin"
+            implementationClass = "nolambda.stream.nuart.gradle.buildSrc.AppPlugin"
+            description = "The Gradle convention plugin for app modules."
+        }
         libPlugin {
             id = "nolambda.stream.nuart.lib"
             displayName = "App Platform Library Gradle Plugin"

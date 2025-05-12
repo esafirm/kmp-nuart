@@ -1,11 +1,11 @@
 [versions]
 agp = "8.9.1"
-android-compileSdk = "36"
+android-compileSdk = "35"
+android-minSdk = "21"
+android-targetSdk = "35"
 # https://developer.android.com/jetpack/androidx/releases/compose-ui
 # https://maven.google.com/web/index.html#androidx.compose.ui:ui
 android-compose-version = "1.7.8"
-android-minSdk = "21"
-android-targetSdk = "36"
 androidx-activity = "1.8.0"
 androidx-constraintlayout = "2.1.4"
 androidx-core = "1.10.1"
@@ -38,9 +38,7 @@ ktfmt-gradle = "0.22.0"
 ksp = "2.1.20-2.0.0"
 maven-publish = "0.31.0"
 molecule = "2.0.0"
-recyclerView = "1.2.1"
 turbine = "1.2.0"
-viewbinding = "7.0.0"
 
 [libraries]
 android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -95,12 +93,7 @@ ksp-embeddable = { module = "com.google.devtools.ksp:symbol-processing-aa-embedd
 ksp-gradle-plugin = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version.ref = "ksp" }
 maven-publish-gradle-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "maven-publish" }
 molecule-runtime = { module = "app.cash.molecule:molecule-runtime", version.ref = "molecule" }
-recyclerView = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerView" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
-#noinspection SimilarGradleDependency
-viewbinding-api = { module = "androidx.databinding:viewbinding", version.ref = "viewbinding" }
-#noinspection SimilarGradleDependency
-viewbinding-agp = { module = "androidx.databinding:viewbinding", version.ref = "agp" }
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }

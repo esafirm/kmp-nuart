@@ -25,3 +25,5 @@ rootProject.name = "nuart"
 
 include(":app")
 include(":home")
+include(":templates:public")
+include(":templates:impl")

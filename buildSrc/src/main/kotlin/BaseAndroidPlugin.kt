@@ -66,6 +66,9 @@ public open class BaseAndroidPlugin : Plugin<Project> {
       }
         .toString()
 
+    val isPublicModule = name.toString().lowercase() == "public"
+    val path = if (isPublicModule) checkNotNull(parent).path else path
+
     return "$group${path.replace(':', '.').replace('-', '.')}"
   }
 
