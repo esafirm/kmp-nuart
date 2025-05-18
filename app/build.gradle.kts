@@ -8,11 +8,11 @@ appPlatform {
   enableModuleStructure(true)
   enableMoleculePresenters(true)
   addImplModuleDependencies(true)
-  addPublicModuleDependencies(false)
 }
 
 dependencies {
   androidMainImplementation(libs.androidx.activity)
 
   commonMainImplementation(project(":templates:impl"))
+  commonMainImplementation(project(":home:impl"))
 }

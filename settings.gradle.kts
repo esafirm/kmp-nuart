@@ -5,12 +5,6 @@ pluginManagement {
     gradlePluginPortal()
     mavenCentral()
   }
-
-  plugins {
-    kotlin("jvm").version(extra["kotlin.version"] as String)
-    id("org.jetbrains.compose").version(extra["compose.version"] as String)
-    id("org.jetbrains.kotlin.plugin.compose").version(extra["kotlin.version"] as String)
-  }
 }
 
 dependencyResolutionManagement {
@@ -24,6 +18,7 @@ dependencyResolutionManagement {
 rootProject.name = "nuart"
 
 include(":app")
-include(":home")
+include(":home:public")
+include(":home:impl")
 include(":templates:public")
 include(":templates:impl")

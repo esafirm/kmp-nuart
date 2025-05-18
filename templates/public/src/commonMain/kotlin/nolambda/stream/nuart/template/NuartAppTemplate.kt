@@ -4,12 +4,12 @@ import software.amazon.app.platform.presenter.BaseModel
 import software.amazon.app.platform.presenter.template.Template
 
 /** All [Template]s implemented in the sample application. */
-sealed interface SampleAppTemplate : Template {
+sealed interface NuartAppTemplate : Template {
   /** A template that hosts a single model, which should rendered as full-screen element. */
   data class FullScreenTemplate(
     /** The model to be rendered fullscreen. */
     val model: BaseModel
-  ) : SampleAppTemplate
+  ) : NuartAppTemplate
 
   /**
    * A template that hosts two models, these can be rendered in different configurations, at the
@@ -28,5 +28,5 @@ sealed interface SampleAppTemplate : Template {
      * meant to be used to show more detailed information.
      */
     val detail: BaseModel,
-  ) : SampleAppTemplate
+  ) : NuartAppTemplate
 }

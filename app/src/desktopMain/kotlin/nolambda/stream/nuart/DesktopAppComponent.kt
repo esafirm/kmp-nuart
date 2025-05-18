@@ -16,5 +16,6 @@ import software.amazon.lastmile.kotlin.inject.anvil.SingleIn
 @Component
 @MergeComponent(AppScope::class)
 @SingleIn(AppScope::class)
-abstract class DesktopAppComponent(@get:Provides val rootScopeProvider: RootScopeProvider) :
-  DesktopAppComponentMerged
+abstract class DesktopAppComponent(
+  @get:Provides val rootScopeProvider: RootScopeProvider
+) : DesktopAppComponentMerged

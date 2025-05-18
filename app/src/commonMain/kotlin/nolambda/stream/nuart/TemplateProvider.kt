@@ -3,33 +3,33 @@ package nolambda.stream.nuart
 import kotlinx.coroutines.flow.StateFlow
 import me.tatarka.inject.annotations.Assisted
 import me.tatarka.inject.annotations.Inject
-import nolambda.stream.nuart.template.SampleAppTemplate
-import nolambda.stream.nuart.template.SampleAppTemplatePresenter
+import nolambda.stream.nuart.template.NuartAppTemplate
+import nolambda.stream.nuart.template.NuartTemplatePresenter
 import software.amazon.app.platform.presenter.molecule.MoleculeScope
 import software.amazon.app.platform.presenter.molecule.MoleculeScopeFactory
 import software.amazon.app.platform.presenter.molecule.launchMoleculePresenter
 import kotlin.getValue
 
 /**
- * Shared class between all platforms to start collecting [SampleAppTemplate] in a [StateFlow].
+ * Shared class between all platforms to start collecting [NuartAppTemplate] in a [StateFlow].
  * Inject [Factory] to create a new instance. Once the instance is no longer needed, call [cancel]
  * to clean up any resources.
  *
  * [NavigationPresenter] serves as the root presenter and gets wrapped in a
- * [SampleAppTemplatePresenter].
+ * [NuartTemplatePresenter].
  */
 @Inject
 class TemplateProvider(
   presenter: NavigationPresenter,
-  templatePresenterFactory: SampleAppTemplatePresenter.Factory,
+  templatePresenterFactory: NuartTemplatePresenter.Factory,
   @Assisted private val moleculeScope: MoleculeScope,
 ) {
 
   /** The templates that should be rendered in the UI. */
-  val templates: StateFlow<SampleAppTemplate> by lazy {
+  val templates: StateFlow<NuartAppTemplate> by lazy {
     moleculeScope
       .launchMoleculePresenter(
-        presenter = templatePresenterFactory.createSampleAppTemplatePresenter(presenter),
+        presenter = templatePresenterFactory.create(presenter),
         input = Unit,
       )
       .model

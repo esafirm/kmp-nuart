@@ -20,24 +20,24 @@ import software.amazon.app.platform.renderer.getComposeRenderer
 @Inject
 @ContributesRenderer
 class ComposeSampleAppTemplateRenderer(private val rendererFactory: RendererFactory) :
-  ComposeRenderer<SampleAppTemplate>() {
+  ComposeRenderer<NuartAppTemplate>() {
 
   @Composable
-  override fun Compose(model: SampleAppTemplate) {
+  override fun Compose(model: NuartAppTemplate) {
     when (model) {
-      is SampleAppTemplate.FullScreenTemplate -> FullScreen(model)
-      is SampleAppTemplate.ListDetailTemplate -> ListDetail(model)
+      is NuartAppTemplate.FullScreenTemplate -> FullScreen(model)
+      is NuartAppTemplate.ListDetailTemplate -> ListDetail(model)
     }
   }
 
   @Composable
-  private fun FullScreen(template: SampleAppTemplate.FullScreenTemplate) {
+  private fun FullScreen(template: NuartAppTemplate.FullScreenTemplate) {
     val renderer = rendererFactory.getComposeRenderer(template.model)
     renderer.renderCompose(template.model)
   }
 
   @Composable
-  private fun ListDetail(template: SampleAppTemplate.ListDetailTemplate) {
+  private fun ListDetail(template: NuartAppTemplate.ListDetailTemplate) {
     Row {
       Column(Modifier.weight(1f)) {
         rendererFactory.getComposeRenderer(template.list).renderCompose(template.list)
